@@ -2,6 +2,7 @@
 
 namespace JdUnionSdk;
 
+use JdUnionSdk\Api\Activity;
 use JdUnionSdk\Api\Apith;
 use JdUnionSdk\Api\Coupon;
 use JdUnionSdk\Api\Good;
@@ -13,7 +14,7 @@ use JdUnionSdk\Api\Promotion;
  * @property Promotion promotion  PID&推广位API
  * @property Link link 获取推广链接API
  * @property Coupon coupon 优惠券API
- * @property Apith apith 高级权限APi
+ * @property Activity activity 活动API
  */
 class JdFatory
 {
