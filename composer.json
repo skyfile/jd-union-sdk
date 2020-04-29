@@ -1,0 +1,29 @@
+{
+  "name": "skyfile/jd-union-sdk",
+  "description": "京东联盟SDK",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "skyfile",
+      "email": "fengfilesky@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packagist.mlj36.com"
+    },
+    {
+      "type": "composer",
+      "url": "https://mirrors.huaweicloud.com/repository/php/"
+    },
+    {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  ]
+}
