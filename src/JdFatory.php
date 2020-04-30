@@ -3,7 +3,6 @@
 namespace JdUnionSdk;
 
 use JdUnionSdk\Api\Activity;
-use JdUnionSdk\Api\Apith;
 use JdUnionSdk\Api\Coupon;
 use JdUnionSdk\Api\Good;
 use JdUnionSdk\Api\Link;
