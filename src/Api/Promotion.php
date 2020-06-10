@@ -11,7 +11,7 @@ class Promotion extends JdGateWay
      * @return bool|string
      * @throws \Exception
      * @api 订单查询接口 （查询级别，分钟查询）
-     * @line https://union.jd.com/#/openplatform/api/650
+     * @line https://union.jd.com/openplatform/api/10419
      */
 
     public function order(array $params)
@@ -26,6 +26,28 @@ class Promotion extends JdGateWay
             'orderReq' => $params,
         ];
         $result = $this->send('jd.union.open.order.query', $reqParams, true);
+        return $result;
+    }
+
+    /**
+     * 订单行查询接口
+     * @param array $params
+     * @return array|bool|string
+     * @throws \Exception
+     * @link https://union.jd.com/openplatform/api/12707
+     */
+    public function orderRow(array $params)
+    {
+        if (!isset($params['pageNo'])) {
+            $params['pageNo'] = 1;
+        }
+        if (!isset($params['pageSize'])) {
+            $params['pageSize'] = 100;
+        }
+        $reqParams = [
+            'orderReq' => $params,
+        ];
+        $result = $this->send('jd.union.open.order.row.query', $reqParams, true);
         return $result;
     }
 
@@ -65,11 +87,11 @@ class Promotion extends JdGateWay
     public function queryPosition(string $key, $pageIndex = 1, $pageSize = 100, $unionType = 1)
     {
         $param['positionReq'] = [
-            'unionId' => $this->unionId,
-            'key' => $key,
+            'unionId'   => $this->unionId,
+            'key'       => $key,
             'unionType' => $unionType,
             'pageIndex' => $pageIndex,
-            'pageSize' => $pageSize
+            'pageSize'  => $pageSize
         ];
         return $this->send('jd.union.open.position.query', $param);
     }
@@ -87,10 +109,10 @@ class Promotion extends JdGateWay
     public function createPosition(array $spaceNameList, string $key, $unionType = 1, $type = 1)
     {
         $param = [
-            'unionId' => $this->unionId,
-            'key' => $key,
-            'unionType' => $unionType,
-            'type' => $type,
+            'unionId'       => $this->unionId,
+            'key'           => $key,
+            'unionType'     => $unionType,
+            'type'          => $type,
             'spaceNameList' => implode(',', $spaceNameList)
         ];
         if ($type == 1) {
